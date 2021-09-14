@@ -1,3 +1,8 @@
 {
-  "clean_urls": true
+  "clean_urls": true,
+  "root": "/",
+  "canonical_host": "${HOST}",
+  "routes": {
+    "/*.html": "index.html"
+  }
 }
