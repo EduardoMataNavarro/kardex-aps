@@ -1,19 +1,9 @@
 .btn-success {
-    background-color: #04471C;
-    border-color: #04471C;
+    border-color: rgb(12, 68, 24);
+    background-color: rgb(12, 68, 24);
 }
 
 .btn-success:hover {
-    background-color: #166533;
-    border-color: #166533;
-}
-
-.btn-danger {
-    background-color: #621606;
-    border-color: #621606;
-}
-
-.btn-danger:hover {
-    background-color: #8B311E;
-    border-color: #8B311E;
+    border-color: rgb(20, 90, 36);
+    background-color: rgb(20, 90, 36);
 }
