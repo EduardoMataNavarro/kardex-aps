@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/kardex.css">
     <title>Kardex</title>
@@ -14,114 +15,124 @@
 
 <body>
     <div class="container-fluid">
-        <h4 class="text-center mt-4 display-5">Kardex</h4>
-        <hr/>
-        <div class="container mt-4">
-            <form id="fields-form">
-                <div class="row mt-2">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="matricula-input">Matricula</label>
-                            <input type="text" class="form-control" name="matricula" id="matricula-input">
+        <div class="p-4">
+            <h3 class="display-4">Kardex</h3>
+            <hr />
+            <div class="mt-4">
+                <form id="lookup-form">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="matricula-input">Matricula</label>
+                            <input class="form-control" type="text" name="matricula" id="matricula-input">
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="matricula-input">Quincena</label>
+                            <input class="form-control" type="text" name="quincena" id="quincena-input">
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="nocontrol-input">Concepto</label>
+                            <input class="form-control" type="text" name="concepto" id="concepto-input">
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="quincena-input">Quincena</label>
-                            <input type="text" class="form-control" name="quincena" id="quincena-input">
+                    <div class="row mt-2">
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="matricula-input">No. Control</label>
+                            <input class="form-control" type="text" name="nocontrol" id="nocontrol-input">
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="matricula-input">Unidades</label>
+                            <input class="form-control" type="text" name="unidades" id="unidades-input">
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fs-5 fw-light mb-1" for="matricula-input">Marca</label>
+                            <input class="form-control" type="text" name="marca" id="marca-input">
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="concepto-input">Concepto</label>
-                            <input type="text" class="form-control" name="concepto" id="concepto-input">
+                    <div class="row mt-4 mb-4">
+                        <div class="col-sm-12 col-md-2 mt-2">
+                            <div class="d-grid">
+                                <button class="btn btn-outline-secondary">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2 mt-2">
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">
+                                    Buscar
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="matricula-input">No. Control</label>
-                            <input type="text" class="form-control" name="control" id="control-input">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="quincena-input">Unidad</label>
-                            <input type="text" class="form-control" name="unidad" id="unidad-input">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="form-group">
-                            <label for="concepto-input">Contratación</label>
-                            <input type="text" class="form-control" name="contratacion" id="tipocontrato-input">
-                        </div>
-                    </div>
-                </div>
+                </form>
+            </div>
+            <div class="mt-4">
+                <h3 class="display-6">Resultados</h3>
+                <hr />
                 <div class="row">
-                    <div class="col-sm-4 col-md-2">
-                        <div class="d-grid">
-                            <button type="cancel" class="btn btn-danger mt-4">
-                                Cancelar
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-md-2">
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-success mt-4">
-                                Buscar
-                            </button>
-                        </div>
+                    <div class="col-md-6">
+                        <table class="table">
+                            <tr>
+                                <td>Matricula:</td>
+                                <td>96208167</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre:</td>
+                                <td>Eduardo Mata</td>
+                            </tr>
+                            <tr>
+                                <td>Adscripcion:</td>
+                                <td>Delegación regional</td>
+                            </tr>
+                            <tr>
+                                <td>Contratación:</td>
+                                <td>N100 - Aux universal de oficinas</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="container mt-4 table-responsive">
-            <hr/>
-            <table class="table table-hover">
-                <thead>
-                    <th class="fw-normal sortable" sort-field="concepto" scope="col">Concepto</th>
-                    <th class="fw-normal sortable" sort-field="importe" scope="col">Importe</th>
-                    <th class="fw-normal sortable" sort-field="unidades" scope="col">Unidades</th>
-                    <th class="fw-normal sortable" sort-field="jornada" scope="col">Jornada</th>
-                    <th class="fw-normal sortable" sort-field="diaGrup" scope="col">Día.grup.</th>
-                    <th class="fw-normal sortable" sort-field="noControl" scope="col">Control</th>
-                    <th class="fw-normal sortable" sort-field="fechaInicio" scope="col">Fecha ini.</th>
-                    <th class="fw-normal sortable" sort-field="fechaFin" scope="col">Fecha fin</th>
-                    <th class="fw-normal sortable" sort-field="marca" scope="col">Marca</th>
-                    <th class="fw-normal sortable" sort-field="matricula" scope="col">Matricula</th>
-                    <th class="fw-normal sortable" sort-field="nombre" scope="col">Nombre</th>
-                    <th class="fw-normal sortable" sort-field="unidade" scope="col">Unidad</th>
-                    <th class="fw-normal sortable" sort-field="tipoContratacion" scope="col">Contratación</th>
-                </thead>
-                <tbody id="table-body">
-                    <tr class="text-center align-middle">
-                        <td>008</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>8</td>
-                        <td>274.53</td>
-                        <td>9996</td>
-                        <td>01/01/2021</td>
-                        <td>02/01/2021</td>
-                        <td>0</td>
-                        <td>96208167</td>
-                        <td>Eduardo Isaí Mata Navarro</td>
-                        <td>20DL200NL</td>
-                        <td>000</td>
-                    </tr>
-                </tbody>
-            </table>
+                <hr/>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Concepto</th>
+                                <th scope="col">Unidades</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Jornada</th>
+                                <th scope="col">No. control</th>
+                                <th scope="col">Quincena</th>
+                                <th scope="col">Inicio</th>
+                                <th scope="col">Fin</th>
+                                <th scope="col">Día grup.</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Matricula</th>
+                                <th scope="col">Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="ft-bold fs-6">008</th>
+                                <th class="ft-bold fs-6">10</th>
+                                <th class="ft-bold fs-6">1</th>
+                                <th class="ft-bold fs-6">8</th>
+                                <th class="ft-bold fs-6">9996</th>
+                                <th class="ft-bold fs-6">20210020</th>
+                                <th class="ft-bold fs-6">10/11/2021</th>
+                                <th class="ft-bold fs-6">25/11/2021</th>
+                                <th class="ft-bold fs-6">321.53</th>
+                                <th class="ft-bold fs-6">4</th>
+                                <th class="ft-bold fs-6">96208167</th>
+                                <th class="ft-bold fs-6">Eduardo Mata</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="./js/kardex.js"></script>
-
 </html>
