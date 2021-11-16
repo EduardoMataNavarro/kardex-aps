@@ -1,14 +1,4 @@
-.sortable {
-    cursor: pointer;
-}
-
-.sortable:hover {
-    background-color: #f0f0f0;
-    transition: 0.25s;
-}
-
-.sortable::after {
-    content: '↨';
-    color: #868686;
-    margin-left: 0.5rem;
+#worker-info-container {
+    overflow-x: auto;
+    white-space: nowrap;
 }

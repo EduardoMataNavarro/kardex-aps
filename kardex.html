@@ -16,61 +16,70 @@
 <body>
     <div class="container-fluid">
         <div class="p-4">
-            <h3 class="display-4">Kardex</h3>
+            <div class="w-100 d-flex">
+                <div class="p-2 mr-auto">
+                    <h3 class="display-4">Kardex</h3>
+                </div>
+                <div class="p-2">
+                    <button class="btn"><i class="bi bi-caret-down"></i></button>
+                </div>
+            </div>
             <hr />
             <div class="mt-4">
-                <form id="lookup-form">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="matricula-input">Matricula</label>
-                            <input class="form-control" type="text" name="matricula" id="matricula-input">
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="matricula-input">Quincena</label>
-                            <input class="form-control" type="text" name="quincena" id="quincena-input">
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="nocontrol-input">Concepto</label>
-                            <input class="form-control" type="text" name="concepto" id="concepto-input">
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="matricula-input">No. Control</label>
-                            <input class="form-control" type="text" name="nocontrol" id="nocontrol-input">
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="matricula-input">Unidades</label>
-                            <input class="form-control" type="text" name="unidades" id="unidades-input">
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fs-5 fw-light mb-1" for="matricula-input">Marca</label>
-                            <input class="form-control" type="text" name="marca" id="marca-input">
-                        </div>
-                    </div>
-                    <div class="row mt-4 mb-4">
-                        <div class="col-sm-12 col-md-2 mt-2">
-                            <div class="d-grid">
-                                <button class="btn btn-outline-secondary">
-                                    Cancelar
-                                </button>
+                <div class="cascade">
+                    <form id="lookup-form">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="matricula-input">Matricula</label>
+                                <input class="form-control shadow-sm" type="text" name="matricula" id="matricula-input">
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="matricula-input">Quincena</label>
+                                <input class="form-control shadow-sm" type="text" name="quincena" id="quincena-input">
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="nocontrol-input">Concepto</label>
+                                <input class="form-control shadow-sm" type="text" name="concepto" id="concepto-input">
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-2 mt-2">
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">
-                                    Buscar
-                                </button>
+                        <div class="row mt-2">
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="matricula-input">No. Control</label>
+                                <input class="form-control shadow-sm" type="text" name="nocontrol" id="nocontrol-input">
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="matricula-input">Unidades</label>
+                                <input class="form-control shadow-sm" type="text" name="unidades" id="unidades-input">
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fs-5 fw-light mb-1" for="matricula-input">Registró</label>
+                                <input class="form-control shadow-sm" type="text" name="registro" id="registro-input">
                             </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="row mt-4 mb-4">
+                            <div class="col-sm-12 col-md-2 mt-2">
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-secondary shadow-sm">
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-2 mt-2">
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark shadow">
+                                        Buscar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="mt-4">
                 <h3 class="display-6">Resultados</h3>
                 <hr />
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row" id="worker-info-container">
+                    <div class="col-md-6 d-inline-block float-none">
                         <table class="table">
                             <tr>
                                 <td>Matricula:</td>
@@ -90,8 +99,28 @@
                             </tr>
                         </table>
                     </div>
+                    <div class="col-md-6 d-inline-block float-none">
+                        <table class="table">
+                            <tr>
+                                <td>Matricula:</td>
+                                <td>96209278</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre:</td>
+                                <td>Trabajador de prueba</td>
+                            </tr>
+                            <tr>
+                                <td>Adscripcion:</td>
+                                <td>Delegación regional</td>
+                            </tr>
+                            <tr>
+                                <td>Contratación:</td>
+                                <td>08 - Aux universal de oficinas</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <hr/>
+                <hr />
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -108,9 +137,10 @@
                                 <th scope="col">Marca</th>
                                 <th scope="col">Matricula</th>
                                 <th scope="col">Nombre</th>
+                                <th scope="col">Registró</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="results-table">
                             <tr>
                                 <th class="ft-bold fs-6">008</th>
                                 <th class="ft-bold fs-6">10</th>
@@ -124,6 +154,22 @@
                                 <th class="ft-bold fs-6">4</th>
                                 <th class="ft-bold fs-6">96208167</th>
                                 <th class="ft-bold fs-6">Eduardo Mata</th>
+                                <th class="ft-bold fs-6">99207744</th>
+                            </tr>
+                            <tr>
+                                <th class="ft-bold fs-6">037</th>
+                                <th class="ft-bold fs-6">2</th>
+                                <th class="ft-bold fs-6">5</th>
+                                <th class="ft-bold fs-6">8</th>
+                                <th class="ft-bold fs-6">9996</th>
+                                <th class="ft-bold fs-6">20210020</th>
+                                <th class="ft-bold fs-6">10/11/2021</th>
+                                <th class="ft-bold fs-6">25/11/2021</th>
+                                <th class="ft-bold fs-6">321.53</th>
+                                <th class="ft-bold fs-6">4</th>
+                                <th class="ft-bold fs-6">96209279</th>
+                                <th class="ft-bold fs-6">Trabajador de prueba</th>
+                                <th class="ft-bold fs-6">99207744</th>
                             </tr>
                         </tbody>
                     </table>
@@ -132,7 +178,10 @@
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./js/kardex.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/kardex.js"></script>
 </html>

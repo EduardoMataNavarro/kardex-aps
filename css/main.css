@@ -7,3 +7,21 @@
     border-color: rgb(20, 90, 36);
     background-color: rgb(20, 90, 36);
 }
+
+.form-control {
+    border: 1px solid #e9e9e9;
+}
+
+.cascade {
+    animation-duration: 1.25s;
+    animation-name: cascade;
+}
+
+@keyframes cascade {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: auto;
+    }
+}
