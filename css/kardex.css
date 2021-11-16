@@ -2,3 +2,13 @@
     overflow-x: auto;
     white-space: nowrap;
 }
+
+.shown {
+    height: auto;
+    transition: 1s ease-in;
+}
+
+.hid {
+    height: 0;
+    transition: 1s ease-out;
+}
