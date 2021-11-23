@@ -1,6 +1,5 @@
 const lookpForm = document.querySelector('#lookup-form');
 const toggleFiltersBtn = document.querySelector('#toggle-filters');
-const lookupFormContainer = document.querySelector('#lookup-form-container');
 
 lookpForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -43,8 +42,3 @@ lookpForm.addEventListener('submit', function (e) {
     });
 });
  
-toggleFiltersBtn.addEventListener('click', function(e) {
-    
-    lookupFormContainer.classList.toggle('hid');
-    lookupFormContainer.classList.toggle('shown');
-});
